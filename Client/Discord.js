@@ -17,7 +17,7 @@ class DiscordClient {
       await this.client.login(token);
       signaleInteractive.success(`Successfully logged to Discord as ${this.client.user.tag}`);
     } catch (error) {
-      signaleInteractive.error(`Couldn't connect to Discord. Reason: ${error.message}`);
+      signaleInteractive.fatal(error);
       process.exit(1);
     }
   }

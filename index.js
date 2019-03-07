@@ -7,9 +7,18 @@ require('module-alias/register');
 // Load signale (better console output)
 const signale = require('signale');
 
+// Handle node errors
+['uncaughtException', 'unhandledRejection'].forEach(event => {
+  process.on(event, error => {
+    signale.fatal(error);
+    process.exit(1);
+  });
+});
+
 // Require Client class (we'll be using Discord here)
 const Client = require('@/Client/Discord');
 
+// Run app
 module.exports = (async () => {
   signale.info('Starting app...');
 
