@@ -15,5 +15,18 @@
   "bugs": {
     "url": "https://github.com/sszczep/DisGlo/issues"
   },
-  "homepage": "https://github.com/sszczep/DisGlo#readme"
+  "homepage": "https://github.com/sszczep/DisGlo#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "discord.js": "^11.4.2",
+    "express": "^4.16.4",
+    "i18next": "^15.0.6",
+    "lowdb": "^1.0.0",
+    "module-alias": "^2.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  }
 }
