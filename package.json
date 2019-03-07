@@ -20,6 +20,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "discord.js": "^11.4.2",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "i18next": "^15.0.6",
     "lowdb": "^1.0.0",
