@@ -1,0 +1,19 @@
+{
+  "name": "disglo",
+  "version": "1.0.0",
+  "description": "Simple Discord bot notifying about recently made changes in GitKraken Glo boards via webhooks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sszczep/DisGlo.git"
+  },
+  "author": "Sebastian Szczepański",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sszczep/DisGlo/issues"
+  },
+  "homepage": "https://github.com/sszczep/DisGlo#readme"
+}
