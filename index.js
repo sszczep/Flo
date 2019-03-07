@@ -4,12 +4,15 @@ require('dotenv').config();
 // Load module aliases
 require('module-alias/register');
 
-// Configure signale (better console output)
+// Load signale (better console output)
 const signale = require('signale');
 
-signale.info('Starting app...');
+// Require Client class (we'll be using Discord here)
+const Client = require('@/Client/Discord');
 
-// Require Discord Client instance
-const discordClient = require('@/discord');
+module.exports = (async () => {
+  signale.info('Starting app...');
 
-module.exports = { discordClient };
+  const client = new Client();
+  await client.login({ token: process.env.CLIENT_TOKEN });
+})();

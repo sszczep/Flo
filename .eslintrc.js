@@ -17,6 +17,8 @@ module.exports = {
     'semi': ['error', 'always'],
     'arrow-parens': ['error', 'as-needed'],
     'import/no-unresolved': 'off',
-    'comma-dangle': ['error', 'never']
+    'comma-dangle': ['error', 'never'],
+    'keyword-spacing': 'off',
+    'class-methods-use-this': 'off'
   }
 };
