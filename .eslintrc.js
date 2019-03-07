@@ -13,7 +13,9 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    "indent": ["error", 2],
-    "semi": ["error", "always"]
-  },
+    'indent': ['error', 2],
+    'semi': ['error', 'always'],
+    'arrow-parens': ['error', 'as-needed'],
+    'import/no-unresolved': 'off'
+  }
 };
