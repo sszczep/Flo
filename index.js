@@ -17,6 +17,9 @@ const signale = require('signale');
 
 // Require Express and Discord
 const express = require('express');
+const initMiddlewares = require('@/Server/initMiddlewares');
+const initRouter = require('@/Server/initRouter');
+
 const Discord = require('discord.js');
 
 // Run app
@@ -48,6 +51,16 @@ module.exports = (async () => {
     await client.login(process.env.CLIENT_TOKEN);
 
     signale.success(`Successfully logged to Discord as ${client.user.tag}\n`);
+
+    /*
+     * CONFIG SERVER
+     */
+
+    // Init all middlewares
+    initMiddlewares(server);
+
+    // Init router
+    initRouter(server, client);
   } catch (error) {
     signale.fatal(error);
     process.exit(1);
