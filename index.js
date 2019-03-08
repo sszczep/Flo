@@ -15,16 +15,16 @@ const signale = require('signale');
   });
 });
 
-// Require Express and DiscordClient
-const ExpressServer = require('@/Server/Express');
-const DiscordClient = require('@/Client/Discord');
+// Require Express and Discord
+const express = require('express');
+const Discord = require('discord.js');
 
 // Run app
 module.exports = (async () => {
   signale.await('Starting app...\n');
 
-  const client = new DiscordClient();
-  const server = new ExpressServer();
+  const client = new Discord.Client();
+  const server = express();
 
   try {
     /*
@@ -34,7 +34,7 @@ module.exports = (async () => {
     signale.await('Creating server...');
 
     // Listen on port provided in environmental variables
-    await server.listen(process.env.SERVER_PORT);
+    await new Promise(resolve => server.listen(process.env.SERVER_PORT, resolve));
 
     signale.success(`Listening on port ${process.env.SERVER_PORT}\n`);
 
@@ -47,7 +47,7 @@ module.exports = (async () => {
     // Login to client using token provided in environmental variables
     await client.login(process.env.CLIENT_TOKEN);
 
-    signale.success(`Successfully logged to Discord as ${client.username}\n`);
+    signale.success(`Successfully logged to Discord as ${client.user.tag}\n`);
   } catch (error) {
     signale.fatal(error);
     process.exit(1);
@@ -55,5 +55,5 @@ module.exports = (async () => {
 
   signale.success('App launched successfully!');
 
-  return { server: server.instance, client };
+  return { server, client };
 })();
