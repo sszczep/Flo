@@ -19,6 +19,7 @@ module.exports = {
     'import/no-unresolved': 'off',
     'comma-dangle': ['error', 'never'],
     'keyword-spacing': 'off',
-    'class-methods-use-this': 'off'
+    'class-methods-use-this': 'off',
+    'global-require': 'off'
   }
 };
