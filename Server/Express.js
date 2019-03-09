@@ -17,7 +17,7 @@ module.exports = (async () => {
   // Add routes
   server.get('', async (req, res) => {
     // Get client instance
-    const client = await require('@/Client/Discord');
+    const client = await require('@/client/Discord');
 
     res.json({
       status: client.status,
@@ -33,7 +33,7 @@ module.exports = (async () => {
       json: req.body
     });
 
-    res.status(200);
+    res.sendStatus(200);
   });
 
   signale.success('Added routes');

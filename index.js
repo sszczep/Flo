@@ -21,12 +21,10 @@ module.exports = (async () => {
     signale.await('Starting app...\n');
 
     // Setup client and server for the first time
-    const client = await require('@/Client/Discord');
-    const server = await require('@/Server/Express');
+    await require('@/client/Discord');
+    await require('@/server/Express');
 
     signale.success('App launched successfully!');
-
-    return { client, server };
   } catch (error) {
     signale.fatal(error);
     process.exit(1);
