@@ -25,6 +25,9 @@ module.exports = (async () => {
     // Configure i18next
     require('./i18next');
 
+    // Load commands
+    require('./client/CommandsContainer');
+
     // Setup client and server for the first time
     await require('@/client/Discord');
     await require('@/server/Express');

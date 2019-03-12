@@ -1,8 +1,14 @@
+const { Signale } = require('signale');
+
+const signale = new Signale({ scope: 'Commands' });
+
 const Command = require('./Command');
 const fileLoader = require('@/helpers/fileLoader');
 
 class CommandsContainer {
   constructor() {
+    signale.await('Loading commands...');
+
     this.commands = {};
 
     // Load all commands and store them in commands object
@@ -12,6 +18,11 @@ class CommandsContainer {
 
       this.commands[name] = new Command({ name, ...content });
     });
+
+    const availableCommands = Object.keys(this.commands).map(name => (name === '' ? 'index' : name));
+    signale.info(`Available commands: ${availableCommands.join(', ')}`);
+
+    signale.success('Commands successfully loaded!\n');
   }
 
   // Get command by name
