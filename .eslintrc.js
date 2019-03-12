@@ -20,6 +20,8 @@ module.exports = {
     'comma-dangle': ['error', 'never'],
     'keyword-spacing': 'off',
     'class-methods-use-this': 'off',
-    'global-require': 'off'
+    'global-require': 'off',
+    'no-await-in-loop': 'off',
+    'consistent-return': 'off'
   }
 };

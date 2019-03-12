@@ -1,9 +1,21 @@
 const Discord = require('discord.js');
 const signale = require('signale');
 
+const messageHandler = require('./messageHandler');
+
+function handleEvents(client) {
+  // Log message
+  client.on('message', messageHandler);
+}
+
 module.exports = (async () => {
   // Create new instance of Discord client
   const client = new Discord.Client();
+
+  signale.await('Adding events handlers...');
+
+  // Listen on events (parse commands etc.)
+  handleEvents(client);
 
   signale.await('Logging to Discord...');
 

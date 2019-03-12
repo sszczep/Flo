@@ -16,7 +16,7 @@ function loadFiles(directory) {
 
     return {
       filename,
-      ...require(filepath) // eslint-disable-line import/no-dynamic-require
+      content: require(filepath) // eslint-disable-line import/no-dynamic-require
     };
   });
 
