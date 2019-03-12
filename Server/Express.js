@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const signale = require('signale');
+const { Signale } = require('signale');
+
+const signale = new Signale({ scope: 'Express' });
 
 module.exports = (async () => {
   // Create new instance of Express server
@@ -12,7 +14,7 @@ module.exports = (async () => {
   server.use(bodyParser.urlencoded({ extended: false }));
   server.use(bodyParser.json());
 
-  signale.success('Attached middewares');
+  signale.success('Attached middlewares');
 
   // Add routes
   server.get('', async (req, res) => {

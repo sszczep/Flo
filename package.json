@@ -38,7 +38,7 @@
     "@": "."
   },
   "signale": {
-    "displayFilename": true,
+    "displayFilename": false,
     "displayTimestamp": true
   }
 }

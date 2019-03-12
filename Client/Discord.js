@@ -1,5 +1,7 @@
 const Discord = require('discord.js');
-const signale = require('signale');
+const { Signale } = require('signale');
+
+const signale = new Signale({ scope: 'Discord' });
 
 const messageHandler = require('./messageHandler');
 

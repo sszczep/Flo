@@ -5,7 +5,9 @@ require('dotenv').config();
 require('module-alias/register');
 
 // Load signale (better console output)
-const signale = require('signale');
+const { Signale } = require('signale');
+
+const signale = new Signale({ scope: 'App' });
 
 // Handle node errors
 ['uncaughtException', 'unhandledRejection'].forEach(event => {
@@ -19,6 +21,9 @@ const signale = require('signale');
 module.exports = (async () => {
   try {
     signale.await('Starting app...\n');
+
+    // Configure i18next
+    require('./i18next');
 
     // Setup client and server for the first time
     await require('@/client/Discord');
