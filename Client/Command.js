@@ -8,12 +8,12 @@ class Command {
     Object.assign(this, params);
   }
 
-  exec({ message, arg }) {
+  exec({ message, args }) {
     const runner = new MiddlewaresRunner();
 
     runner.use(injectI18next, this.handler, errorHandler);
 
-    runner.run({ message, arg });
+    runner.run({ message, args });
   }
 }
 

@@ -3,7 +3,7 @@ const CommandsContainer = require('./CommandsContainer');
 
 async function handleCommand(message) {
   // Get prefix, command name and argument
-  const [prefix, name = '', arg = null] = message.content.split(' ');
+  const [prefix, name = '', args = []] = message.content.split(' ');
 
   // If command is not for bot, ignore it
   if(prefix !== commandPrefix) return;
@@ -15,7 +15,7 @@ async function handleCommand(message) {
   if (!command) return message.reply('There is no command with that name');
 
   // Exec command handler
-  return command.exec({ message, arg });
+  return command.exec({ message, args });
 }
 
 module.exports = handleCommand;
