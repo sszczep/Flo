@@ -22,6 +22,7 @@ module.exports = {
     'class-methods-use-this': 'off',
     'global-require': 'off',
     'no-await-in-loop': 'off',
-    'consistent-return': 'off'
+    'consistent-return': 'off',
+    'no-unused-vars': ["error", { "argsIgnorePattern": "^_" }]
   }
 };

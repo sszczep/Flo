@@ -1,4 +1,5 @@
 const MiddlewaresRunner = require('./middlewares/MiddlewaresRunner');
+const injectI18next = require('./middlewares/injectI18next');
 const errorHandler = require('./middlewares/errorHandler');
 
 class Command {
@@ -10,7 +11,7 @@ class Command {
   exec({ message, arg }) {
     const runner = new MiddlewaresRunner();
 
-    runner.use(this.handler, errorHandler);
+    runner.use(injectI18next, this.handler, errorHandler);
 
     runner.run({ message, arg });
   }

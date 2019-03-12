@@ -1,7 +1,9 @@
+const packageJSON = require('@/package.json');
+
 module.exports = {
-  async handler({ message, arg }) {
-    console.log('Message', message.content);
-    console.log('Argument', arg);
-    await message.channel.send('hello there!');
+  async handler({ message, i18next }, _next) {
+    const { name, version, commandPrefix: prefix } = packageJSON;
+
+    message.reply(i18next.t('commands.index.message', { name, version, prefix }));
   }
 };

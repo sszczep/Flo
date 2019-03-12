@@ -1,5 +1,6 @@
 {
-  "name": "disglo",
+  "name": "DisGlo",
+  "commandPrefix": "!glo",
   "version": "1.0.0",
   "description": "Simple Discord bot notifying about recently made changes in GitKraken Glo boards via webhooks",
   "main": "index.js",
