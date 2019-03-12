@@ -1,3 +1,4 @@
+const { commandPrefix } = require('@/package.json');
 const CommandsContainer = require('./CommandsContainer');
 
 async function handleCommand(message) {
@@ -5,7 +6,7 @@ async function handleCommand(message) {
   const [prefix, name = '', arg = null] = message.content.split(' ');
 
   // If command is not for bot, ignore it
-  if(prefix !== '!glo') return;
+  if(prefix !== commandPrefix) return;
 
   // Find command object
   const command = CommandsContainer.get(name);
