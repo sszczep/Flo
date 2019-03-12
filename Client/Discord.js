@@ -14,10 +14,10 @@ module.exports = (async () => {
   // Create new instance of Discord client
   const client = new Discord.Client();
 
-  signale.await('Adding events handlers...');
-
   // Listen on events (parse commands etc.)
   handleEvents(client);
+
+  signale.success('Added events handlers');
 
   signale.await('Logging to Discord...');
 
