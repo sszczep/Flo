@@ -7,6 +7,12 @@ module.exports = {
 
 I will notify you about recent changes made to your GitKraken Glo's boards.
 For more details, type **{{ prefix }} help**`
+      },
+      webhooks: {
+        message:
+`here is your URL for webhooks: **{{ url }}**.
+
+Specify this URL in your board settings to start receiving notifications!`
       }
     }
   }
