@@ -6,6 +6,7 @@ function loadFiles(directory) {
   const dir = path.join(__dirname, directory);
 
   // Iterate through every file in directory
+  // Path must be relative to helpers directory
   const files = fs.readdirSync(dir).map(file => {
     // Get path of file, its name and extension
     const filepath = path.join(dir, file);

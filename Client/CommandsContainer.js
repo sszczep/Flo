@@ -12,7 +12,6 @@ class CommandsContainer {
     this.commands = {};
 
     // Load all commands and store them in commands object
-    // Path must be relative to helpers directory
     fileLoader('../client/commands').forEach(({ filename, content }) => {
       const name = filename === 'index' ? '' : filename;
 
