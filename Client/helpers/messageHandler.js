@@ -1,5 +1,5 @@
 const { commandPrefix } = require('@/package.json');
-const CommandsContainer = require('./CommandsContainer');
+const CommandsContainer = require('@/client/CommandsContainer');
 
 async function handleCommand(message) {
   // Get prefix, command name and argument
@@ -12,7 +12,11 @@ async function handleCommand(message) {
   const command = CommandsContainer.get(name);
 
   // If there is no specified command, inform user
-  if (!command) return message.reply('There is no command with that name');
+  if (!command) {
+    const i18next = require('i18next');
+
+    return message.reply(i18next.t('errors.NoCommand', { lng: 'en', listing: CommandsContainer.listing }));
+  }
 
   // Exec command handler
   return command.exec({ message, args });

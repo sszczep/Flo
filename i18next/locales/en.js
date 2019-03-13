@@ -1,5 +1,12 @@
 module.exports = {
   translation: {
+    errors: {
+      NoCommand:
+`there is no such a command.
+
+List of available commands:
+{{ listing }}`
+    },
     commands: {
       index: {
         message:

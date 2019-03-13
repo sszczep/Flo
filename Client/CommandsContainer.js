@@ -19,7 +19,7 @@ class CommandsContainer {
     });
 
     // Create listing of all commands
-    this.listing = Object.keys(this.commands).map(name => this.commands[name].syntax).join('\n');
+    this.listing = Object.keys(this.commands).map(name => `**${this.commands[name].syntax}**`).join('\n');
 
     // Log all available commands to console
     const availableCommands = Object.keys(this.commands).map(name => (name === '' ? 'index' : name));
