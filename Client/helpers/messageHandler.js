@@ -15,7 +15,12 @@ async function handleCommand(message) {
   if (!command) {
     const i18next = require('i18next');
 
-    return message.reply(i18next.t('errors.NoCommand', { lng: 'en', listing: CommandsContainer.listing }));
+    return message.reply(
+      i18next.t(
+        'errors.NoCommand',
+        { lng: 'en', listing: CommandsContainer.listing('en') }
+      )
+    );
   }
 
   // Exec command handler
