@@ -5,7 +5,7 @@ const getDatabaseChannel = require('@/database/channel');
 const { commandPrefix } = require('@/package.json');
 const CommandsContainer = require('@/client/CommandsContainer');
 
-async function handleCommand(message) {
+async function handleMessage(message) {
   // Get prefix, command name and argument
   const [prefix, name = '', args = []] = message.content.split(' ');
 
@@ -40,4 +40,4 @@ async function handleCommand(message) {
   });
 }
 
-module.exports = handleCommand;
+module.exports = handleMessage;
