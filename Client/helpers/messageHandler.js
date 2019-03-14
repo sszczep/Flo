@@ -7,7 +7,7 @@ const CommandsContainer = require('@/client/CommandsContainer');
 
 async function handleMessage(message) {
   // Get prefix, command name and argument
-  const [prefix, name = '', args = []] = message.content.split(' ');
+  const [prefix, name = '', ...args] = message.content.split(' ');
 
   // If command is not for bot, ignore it
   if(prefix !== commandPrefix) return;
