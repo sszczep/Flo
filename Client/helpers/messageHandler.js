@@ -1,3 +1,5 @@
+const i18next = require('i18next');
+
 const { commandPrefix } = require('@/package.json');
 const CommandsContainer = require('@/client/CommandsContainer');
 
@@ -11,20 +13,21 @@ async function handleCommand(message) {
   // Find command object
   const command = CommandsContainer.get(name);
 
+  // Clone i18next instance so we can set local language
+  const i18nextInstance = i18next.cloneInstance({ lng: 'en' });
+
   // If there is no specified command, inform user
   if (!command) {
-    const i18next = require('i18next');
-
     return message.reply(
-      i18next.t(
+      i18nextInstance.t(
         'errors.NoCommand',
-        { lng: 'en', listing: CommandsContainer.listing('en') }
+        { listing: CommandsContainer.listing(i18nextInstance.language) }
       )
     );
   }
 
   // Exec command handler
-  return command.exec({ message, args });
+  return command.exec({ message, args, i18next: i18nextInstance });
 }
 
 module.exports = handleCommand;

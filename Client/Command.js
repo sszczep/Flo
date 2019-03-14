@@ -1,6 +1,5 @@
 const { commandPrefix } = require('@/package.json');
 const MiddlewaresRunner = require('./middlewares/MiddlewaresRunner');
-const injectI18next = require('./middlewares/injectI18next');
 const errorHandler = require('./middlewares/errorHandler');
 
 class Command {
@@ -12,16 +11,21 @@ class Command {
     this.args = this.args || [];
 
     // Create string with correct usage of this command
-    const args = this.args.reduce((string, { name, required }) => `${string}${required ? `<${name}>` : `[${name}]`} `, '');
-    this.syntax = `${commandPrefix} ${this.name} ${args}`;
+    const args = this.args.map(
+      ({ name, required }) => `${required ? `<${name}>` : `[${name}]`}`
+    ).join(' ');
+
+    // Remove spaces from both ends of string
+    // Also use regex to convert multi spaces into single ones (eg. name is empty)
+    this.syntax = `${commandPrefix} ${this.name} ${args}`.trim().replace(/  +/g, ' ');
   }
 
-  exec({ message, args }) {
+  exec(req) {
     const runner = new MiddlewaresRunner();
 
-    runner.use(injectI18next, this.handler, errorHandler);
+    runner.use(this.handler, errorHandler);
 
-    runner.run({ message, args });
+    runner.run(req);
   }
 }
 
