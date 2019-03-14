@@ -1,5 +1,7 @@
 const i18next = require('i18next');
 
+const getDatabaseChannel = require('@/database/channel');
+
 const { commandPrefix } = require('@/package.json');
 const CommandsContainer = require('@/client/CommandsContainer');
 
@@ -13,21 +15,29 @@ async function handleCommand(message) {
   // Find command object
   const command = CommandsContainer.get(name);
 
+  // Get reference to channel data in database
+  const databaseChannel = getDatabaseChannel(message.channel.id);
+
   // Clone i18next instance so we can set local language
-  const i18nextInstance = i18next.cloneInstance({ lng: 'en' });
+  const i18nextInstance = i18next.cloneInstance({ lng: databaseChannel.language });
 
   // If there is no specified command, inform user
   if (!command) {
     return message.reply(
       i18nextInstance.t(
         'errors.NoCommand',
-        { listing: CommandsContainer.listing(i18nextInstance.language) }
+        { listing: CommandsContainer.listing(i18nextInstance) }
       )
     );
   }
 
   // Exec command handler
-  return command.exec({ message, args, i18next: i18nextInstance });
+  return command.exec({
+    message,
+    args,
+    databaseChannel,
+    i18next: i18nextInstance
+  });
 }
 
 module.exports = handleCommand;
