@@ -32,15 +32,13 @@ class CommandsContainer {
 
   // Get listing of all commands
   get listing() {
-    return i18next => Object.keys(this.commands)
-      .map(name => {
-        const syntax = `**${this.commands[name].syntax}**`;
-
+    return i18next => Object.entries(this.commands)
+      .map(([name, { syntax }]) => {
         const descriptionKey = `commands.${name === '' ? 'index' : name}.description`;
         const descriptionExists = i18next.exists(descriptionKey);
-        const description = descriptionExists ? ` - ${i18next.t(descriptionKey)}` : '';
+        const description = descriptionExists ? `- ${i18next.t(descriptionKey)}` : '';
 
-        return syntax + description;
+        return `**${syntax}** ${description}`;
       })
       .join('\n');
   }
