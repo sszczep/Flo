@@ -28,7 +28,7 @@ async function handleMessage(message) {
   if (!command) {
     return message.reply(
       i18nextInstance.t(
-        'errors.NoCommand',
+        'errors.NoCommandWithListing',
         { listing: CommandsContainer.listing(i18nextInstance) }
       )
     );
