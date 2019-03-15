@@ -23,7 +23,7 @@ module.exports = (async () => {
     signale.await('Starting app...\n');
 
     // Configure i18next
-    require('./i18next');
+    await require('./i18next');
 
     // Load commands
     require('./client/CommandsContainer');

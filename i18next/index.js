@@ -4,22 +4,24 @@ const fileLoader = require('@/helpers/fileLoader');
 
 const signale = new Signale({ scope: 'i18next' });
 
-signale.await('Configuring i18next...');
+module.exports = (async () => {
+  signale.await('Configuring i18next...');
 
-// Load all translations
-const resources = fileLoader('../i18next/locales')
-  .reduce((locales, { filename, content }) => ({ ...locales, [filename]: content }), {});
+  // Load all translations
+  const resources = fileLoader('../i18next/locales')
+    .reduce((locales, { filename, content }) => ({ ...locales, [filename]: content }), {});
 
-// Configure global i18next instance
-i18next.init({
-  lng: 'en',
-  fallbackLng: 'en',
-  resources,
-  interpolation: {
-    escapeValue: false
-  }
-});
+  // Configure global i18next instance
+  await i18next.init({
+    lng: 'en',
+    fallbackLng: 'en',
+    resources,
+    interpolation: {
+      escapeValue: false
+    }
+  });
 
-signale.info(`Available languages: ${Object.keys(resources).join(', ')}`);
+  signale.info(`Available languages: ${Object.keys(resources).join(', ')}`);
 
-signale.success('i18next successfully configured\n');
+  signale.success('i18next successfully configured\n');
+})();
