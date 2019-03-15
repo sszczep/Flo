@@ -19,7 +19,10 @@ class CommandsContainer {
     });
 
     // Log all available commands to console
-    const availableCommands = Object.keys(this.commands).map(name => (name === '' ? 'index' : name));
+    const availableCommands = Object.keys(this.commands)
+      .sort((a, b) => (a > b ? 1 : -1))
+      .map(name => (name === '' ? 'index' : name));
+
     signale.info(`Available commands: ${availableCommands.join(', ')}`);
 
     signale.success('Commands successfully loaded!\n');
@@ -33,6 +36,7 @@ class CommandsContainer {
   // Get listing of all commands
   get listing() {
     return i18next => Object.entries(this.commands)
+      .sort((a, b) => (a[0] > b[0] ? 1 : -1))
       .map(([name, { syntax }]) => {
         const descriptionKey = `commands.${name === '' ? 'index' : name}.description`;
         const descriptionExists = i18next.exists(descriptionKey);
