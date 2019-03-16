@@ -4,6 +4,8 @@ const { Signale } = require('signale');
 
 const signale = new Signale({ scope: 'Express' });
 
+const router = require('@server/router');
+
 module.exports = (async () => {
   // Create new instance of Express server
   const server = express();
@@ -17,26 +19,7 @@ module.exports = (async () => {
   signale.success('Attached middlewares');
 
   // Add routes
-  server.get('', async (req, res) => {
-    // Get client instance
-    const client = await require('@client/Discord');
-
-    res.json({
-      status: client.status,
-      uptime: client.uptime,
-      servers: client.guilds.array().length
-    }).status(200);
-  });
-
-  server.post('/webhooks/:channel', (req, res) => {
-    console.log('Webhook!');
-    console.log({
-      channel: req.params.channel,
-      json: req.body
-    });
-
-    res.sendStatus(200);
-  });
+  server.use(router);
 
   signale.success('Added routes');
 
