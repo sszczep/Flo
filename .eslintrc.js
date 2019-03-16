@@ -23,6 +23,7 @@ module.exports = {
     'global-require': 'off',
     'no-await-in-loop': 'off',
     'consistent-return': 'off',
-    'no-unused-vars': ["error", { "argsIgnorePattern": "^_" }]
+    'no-unused-vars': ["error", { "argsIgnorePattern": "^_" }],
+    'no-param-reassign': 'off'
   }
 };

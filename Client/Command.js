@@ -1,6 +1,4 @@
 const { commandPrefix } = require('@/package.json');
-const MiddlewaresRunner = require('./middlewares/MiddlewaresRunner');
-const errorHandler = require('./middlewares/errorHandler');
 
 class Command {
   constructor(params) {
@@ -21,11 +19,7 @@ class Command {
   }
 
   exec(req) {
-    const runner = new MiddlewaresRunner();
-
-    runner.use(this.handler, errorHandler);
-
-    runner.run(req);
+    this.handler(req);
   }
 }
 
