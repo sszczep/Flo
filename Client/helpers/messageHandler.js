@@ -1,9 +1,9 @@
 const i18next = require('i18next');
 
-const getDatabaseChannel = require('@/database/channel');
+const getDatabaseChannel = require('@root/database/channel');
 
-const { commandPrefix } = require('@/package.json');
-const CommandsContainer = require('@/client/CommandsContainer');
+const { commandPrefix } = require('@root/package.json');
+const CommandsContainer = require('@client/CommandsContainer');
 
 async function handleMessage(message) {
   // If message comes from bot, ignore it

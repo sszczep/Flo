@@ -1,4 +1,4 @@
-const packageJSON = require('@/package.json');
+const packageJSON = require('@root/package.json');
 
 module.exports = {
   async handler({ message, i18next }, _next) {

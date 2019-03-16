@@ -23,14 +23,14 @@ module.exports = (async () => {
     signale.await('Starting app...\n');
 
     // Configure i18next
-    await require('./i18next');
+    await require('@root/i18next');
 
     // Load commands
-    require('./client/CommandsContainer');
+    require('@client/CommandsContainer');
 
     // Setup client and server for the first time
-    await require('@/client/Discord');
-    await require('@/server/Express');
+    await require('@client/Discord');
+    await require('@server/Express');
 
     signale.success('App launched successfully!');
   } catch (error) {

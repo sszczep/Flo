@@ -2,8 +2,8 @@ const { Signale } = require('signale');
 
 const signale = new Signale({ scope: 'Commands' });
 
-const Command = require('./Command');
-const fileLoader = require('@/helpers/fileLoader');
+const Command = require('@client/Command');
+const fileLoader = require('@root/helpers/fileLoader');
 
 class CommandsContainer {
   constructor() {

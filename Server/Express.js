@@ -19,7 +19,7 @@ module.exports = (async () => {
   // Add routes
   server.get('', async (req, res) => {
     // Get client instance
-    const client = await require('@/client/Discord');
+    const client = await require('@client/Discord');
 
     res.json({
       status: client.status,

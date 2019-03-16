@@ -1,4 +1,4 @@
-const database = require('./index');
+const database = require('@root/database/index');
 
 function getChannel(channelID) {
   // Get channel data from database

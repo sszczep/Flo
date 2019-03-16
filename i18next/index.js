@@ -1,6 +1,6 @@
 const { Signale } = require('signale');
 const i18next = require('i18next');
-const fileLoader = require('@/helpers/fileLoader');
+const fileLoader = require('@root/helpers/fileLoader');
 
 const signale = new Signale({ scope: 'i18next' });
 

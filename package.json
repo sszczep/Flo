@@ -36,7 +36,9 @@
     "eslint-plugin-import": "^2.16.0"
   },
   "_moduleAliases": {
-    "@": "."
+    "@root": ".",
+    "@client": "client",
+    "@server": "server"
   },
   "signale": {
     "displayFilename": false,

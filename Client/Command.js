@@ -1,4 +1,4 @@
-const { commandPrefix } = require('@/package.json');
+const { commandPrefix } = require('@root/package.json');
 
 class Command {
   constructor(params) {

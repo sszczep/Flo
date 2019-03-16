@@ -3,7 +3,7 @@ const { Signale } = require('signale');
 
 const signale = new Signale({ scope: 'Discord' });
 
-const messageHandler = require('./helpers/messageHandler');
+const messageHandler = require('@client/helpers/messageHandler');
 
 function handleEvents(client) {
   // Log message
