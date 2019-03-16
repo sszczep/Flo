@@ -38,12 +38,18 @@ For list of all available commands, type **{{ prefix }} list**`
 Available languages: **{{ languages }}**.`
       },
       webhooks: {
-        description: 'show URL for webhooks',
+        description: 'show webhooks data',
         help: 'help regarding webhooks...',
         message:
-`here is your URL for webhooks: **{{ url }}**.
+`webhooks credentials:
+URL: **{{ url }}**
+Secret: **{{ secret }}**
 
-Specify this URL in your board settings to start receiving notifications!`
+Specify these data in your board settings to start receiving notifications!`
+      },
+      regenerateSecret: {
+        description: 'regenerate secret for webhooks',
+        message: 'your new secret is: **{{ secret }}**'
       }
     }
   }

@@ -1,3 +1,5 @@
+const crypto = require('crypto');
+
 const database = require('@root/database/index');
 
 function getChannel(channelID) {
@@ -6,12 +8,25 @@ function getChannel(channelID) {
 
   // If channel does not exist, add it to database
   if(!channel.value()) {
-    database.get('channels').push({ id: channelID, language: 'en' }).write();
+    database.get('channels').push({
+      id: channelID,
+      language: 'en',
+      secret: crypto.createHash('sha1').update(`${channelID}:${Date.now()}`).digest('hex')
+    }).write();
   }
 
   return {
     get data() {
       return channel.value();
+    },
+
+    get secret() {
+      const { secret } = channel.value();
+      return secret;
+    },
+
+    set secret(secret) {
+      channel.assign({ secret }).write();
     },
 
     get language() {

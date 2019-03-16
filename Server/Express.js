@@ -14,7 +14,11 @@ module.exports = (async () => {
 
   // Add middlewares
   server.use(bodyParser.urlencoded({ extended: false }));
-  server.use(bodyParser.json());
+  server.use(bodyParser.json({
+    verify: (req, res, buf) => {
+      req.buf = buf;
+    }
+  }));
 
   signale.success('Attached middlewares');
 
