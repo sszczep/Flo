@@ -28,6 +28,15 @@ For list of all available commands, type **{{ prefix }} list**`
 `list of available commands:
 {{ listing }}`
       },
+      language: {
+        description: 'list available languages or change the default one',
+        message: 'available languages: **{{ languages }}**.',
+        changed: 'successfully changed language to **English**',
+        noLanguage:
+`this language is not supported yet.
+
+Available languages: **{{ languages }}**.`
+      },
       webhooks: {
         description: 'show URL for webhooks',
         help: 'help regarding webhooks...',
