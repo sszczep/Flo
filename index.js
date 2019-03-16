@@ -19,22 +19,17 @@ const signale = new Signale({ scope: 'App' });
 
 // Run app
 module.exports = (async () => {
-  try {
-    signale.await('Starting app...\n');
+  signale.await('Starting app...\n');
 
-    // Configure i18next
-    await require('@root/i18next');
+  // Configure i18next
+  await require('@root/i18next');
 
-    // Load commands
-    require('@client/CommandsContainer');
+  // Load commands
+  require('@client/CommandsContainer');
 
-    // Setup client and server for the first time
-    await require('@client/Discord');
-    await require('@server/Express');
+  // Setup client and server for the first time
+  await require('@client/Discord');
+  await require('@server/Express');
 
-    signale.success('App launched successfully!');
-  } catch (error) {
-    signale.fatal(error);
-    process.exit(1);
-  }
+  signale.success('App launched successfully!');
 })();
