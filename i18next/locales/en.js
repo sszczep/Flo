@@ -51,6 +51,21 @@ Specify these data in your board settings to start receiving notifications!`
         description: 'regenerate secret for webhooks',
         message: 'your new secret is: **{{ secret }}**'
       }
+    },
+    webhooks: {
+      cards: {
+        updated:
+`**{{ modifiedBy.name }} ({{ modifiedBy.username }})** made some changes to **{{ cardName }}** card in **{{ boardName }}** board.
+
+**NAME**
+\`\`\`diff
+{{ name }}
+\`\`\`
+**DESCRIPTION**
+\`\`\`diff
+{{ description }}
+\`\`\``
+      }
     }
   }
 };

@@ -1,8 +1,10 @@
 const crypto = require('crypto');
+const i18next = require('i18next');
 
 const router = require('express').Router();
 
 const getDatabaseChannel = require('@root/database/channel');
+const GloEvents = require('@server/GloEvents');
 
 router.get('', async (req, res) => {
   // Get client instance
@@ -29,13 +31,28 @@ router.post('/webhooks/:channel',
     next();
   },
   // Process webhook
-  (req, res) => {
+  async (req, res) => {
+    // Temporary logs
     console.log('Webhook!');
     console.log('Event:', req.headers['x-gk-event']);
     console.log({
       channel: req.params.channel,
       json: req.body
     });
+
+    const event = req.headers['x-gk-event'];
+    const { action } = req.body;
+
+    const client = await require('@client/Discord');
+    const channel = client.channels.find(({ id }) => id === req.params.channel);
+
+    if(!channel) return res.sendStatus(400);
+
+    const i18nextInstance = i18next.cloneInstance({ lng: channel.language });
+
+    const diffObject = GloEvents[req.headers['x-gk-event']][req.body.action](req.body);
+
+    await channel.send(i18nextInstance.t(`webhooks.${event}.${action}`, diffObject));
 
     res.sendStatus(204);
   });
