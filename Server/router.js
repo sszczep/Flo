@@ -43,16 +43,19 @@ router.post('/webhooks/:channel',
     const event = req.headers['x-gk-event'];
     const { action } = req.body;
 
-    const client = await require('@client/Discord');
-    const channel = client.channels.find(({ id }) => id === req.params.channel);
+    try {
+      const client = await require('@client/Discord');
+      const channel = client.channels.find(({ id }) => id === req.params.channel);
 
-    if(!channel) return res.sendStatus(400);
+      if(!channel) throw new Error();
 
-    const i18nextInstance = i18next.cloneInstance({ lng: channel.language });
+      const i18nextInstance = i18next.cloneInstance({ lng: channel.language });
 
-    const diffObject = GloEvents[req.headers['x-gk-event']][req.body.action](req.body);
-
-    await channel.send(i18nextInstance.t(`webhooks.${event}.${action}`, diffObject));
+      const diffObject = GloEvents[event][action](req.body);
+      await channel.send(i18nextInstance.t(`webhooks.${event}.${action}`, diffObject));
+    } catch(err) {
+      return res.sendStatus(400);
+    }
 
     res.sendStatus(204);
   });
