@@ -1,5 +1,17 @@
 module.exports = {
   translation: {
+    keywords: {
+      name: 'Name',
+      description: 'Description',
+      dueDate: 'Due date',
+      labels: 'Labels',
+      assignees: 'Assignees',
+      old: 'Old',
+      new: 'New',
+      added: 'Added',
+      removed: 'Removed',
+      none: 'none'
+    },
     errors: {
       NoCommand:
 `there is no such a command.
@@ -53,18 +65,25 @@ Specify these data in your board settings to start receiving notifications!`
       }
     },
     webhooks: {
-      cards: {
-        updated:
-`**{{ modifiedBy.name }} ({{ modifiedBy.username }})** made some changes to **{{ cardName }}** card in **{{ boardName }}** board.
+      footer: 'GitKraken Glo with ❤︎',
 
-**NAME**
-\`\`\`diff
-{{ name }}
-\`\`\`
-**DESCRIPTION**
-\`\`\`diff
-{{ description }}
-\`\`\``
+      cards: {
+        description:
+`Card name: {{ cardName }}
+Board name: {{ boardName }}
+Changed by: {{ sender.name }} ({{ sender.username }})`,
+
+        added: 'New card has been added',
+        updated: 'Card has been updated',
+        copied: 'Card has been duplicated',
+        archived: 'Card has been archived',
+        unarchived: 'Card has been unarchived',
+        deleted: 'Card has been deleted',
+        moved_column: 'Card has been moved to the other column',
+        moved_to_board: 'Card has been moved to the other board',
+        moved_from_board: 'Card has been moved from the other board',
+        labels_updated: '$t(webhooks.cards.updated)',
+        assignees_updated: '$t(webhooks.cards.updated)'
       }
     }
   }

@@ -3,6 +3,10 @@ const i18next = require('i18next');
 
 const router = require('express').Router();
 
+const { Signale } = require('signale');
+
+const signale = new Signale({ scope: 'Routes' });
+
 const getDatabaseChannel = require('@root/database/channel');
 const GloEvents = require('@server/GloEvents');
 
@@ -47,13 +51,14 @@ router.post('/webhooks/:channel',
       const client = await require('@client/Discord');
       const channel = client.channels.find(({ id }) => id === req.params.channel);
 
-      if(!channel) throw new Error();
+      if(!channel) throw new Error('There is no channel with given id');
 
       const i18nextInstance = i18next.cloneInstance({ lng: channel.language });
 
-      const diffObject = GloEvents[event][action](req.body);
-      await channel.send(i18nextInstance.t(`webhooks.${event}.${action}`, diffObject));
+      const message = GloEvents[event][action](req.body, i18nextInstance);
+      if(message) await channel.send(message);
     } catch(err) {
+      signale.error(err);
       return res.sendStatus(400);
     }
 
