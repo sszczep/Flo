@@ -3,6 +3,8 @@ const { Signale } = require('signale');
 
 const signale = new Signale({ scope: 'Discord' });
 
+const { discordToken } = require('@root/config');
+
 const messageHandler = require('@client/helpers/messageHandler');
 
 function handleEvents(client) {
@@ -22,7 +24,7 @@ module.exports = (async () => {
   signale.await('Logging to Discord...');
 
   // Login to client using token provided in environmental variables
-  await client.login(process.env.CLIENT_TOKEN);
+  await client.login(discordToken);
 
   signale.success(`Successfully logged to Discord as ${client.user.tag}\n`);
 

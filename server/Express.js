@@ -4,6 +4,8 @@ const { Signale } = require('signale');
 
 const signale = new Signale({ scope: 'Express' });
 
+const { serverPort } = require('@root/config');
+
 const router = require('@server/router');
 
 module.exports = (async () => {
@@ -28,9 +30,9 @@ module.exports = (async () => {
   signale.success('Added routes');
 
   // Listen on port provided in environmental variables
-  await new Promise(resolve => server.listen(process.env.SERVER_PORT, resolve));
+  await new Promise(resolve => server.listen(serverPort, resolve));
 
-  signale.success(`Listening on port ${process.env.SERVER_PORT}\n`);
+  signale.success(`Listening on port ${serverPort}\n`);
 
   return server;
 })();

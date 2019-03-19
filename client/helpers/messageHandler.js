@@ -2,7 +2,7 @@ const i18next = require('i18next');
 
 const getDatabaseChannel = require('@root/database/channel');
 
-const { commandPrefix } = require('@root/package.json');
+const { prefix: commandPrefix } = require('@root/config');
 const CommandsContainer = require('@client/CommandsContainer');
 
 async function handleMessage(message) {

@@ -1,4 +1,4 @@
-const { commandPrefix } = require('@root/package.json');
+const { prefix } = require('@root/config');
 
 class Command {
   constructor(params) {
@@ -15,7 +15,7 @@ class Command {
 
     // Remove spaces from both ends of string
     // Also use regex to convert multi spaces into single ones (eg. name is empty)
-    this.syntax = `${commandPrefix} ${this.name} ${args}`.trim().replace(/  +/g, ' ');
+    this.syntax = `${prefix} ${this.name} ${args}`.trim().replace(/  +/g, ' ');
   }
 
   exec(req) {

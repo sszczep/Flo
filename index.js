@@ -1,8 +1,8 @@
-// Load environment variables from .env files
-require('dotenv').config();
-
 // Load module aliases
 require('module-alias/register');
+
+// Load config
+require('@root/config');
 
 // Load signale (better console output)
 const { Signale } = require('signale');
