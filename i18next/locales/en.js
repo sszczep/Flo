@@ -5,6 +5,7 @@ module.exports = {
       description: 'Description',
       dueDate: 'Due date',
       labels: 'Labels',
+      members: 'Members',
       assignees: 'Assignees',
       old: 'Old',
       new: 'New',
@@ -66,6 +67,20 @@ Specify these data in your board settings to start receiving notifications!`
     },
     webhooks: {
       footer: 'GitKraken Glo with ❤︎',
+
+      boards: {
+        description:
+`Board name: {{ boardName }}
+Changed by: {{ sender.name }} ({{ sender.username }})
+[Open in browser]({{ url }})`,
+
+        updated: 'Board has been updated',
+        archived: 'Board has been archived',
+        unarchived: 'Board has been unarchived',
+        deleted: 'Board has been deleted',
+        labels_updated: '$t(webhooks.boards.updated)',
+        members_updated: '$t(webhooks.boards.updated)'
+      },
 
       columns: {
         description:
