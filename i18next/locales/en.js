@@ -65,8 +65,21 @@ Specify these data in your board settings to start receiving notifications!`
       }
     },
     webhooks: {
-      openInBrowser: 'Open in browser',
       footer: 'GitKraken Glo with ❤︎',
+
+      columns: {
+        description:
+`Column name: {{ columnName }}
+Board name: {{ boardName }}
+Changed by: {{ sender.name }} ({{ sender.username }})
+[Open in browser]({{ url }})`,
+
+        added: 'New column has been added',
+        updated: 'Column has been updated',
+        archived: 'Column has been archived',
+        unarchived: 'Column has been unarchived',
+        deleted: 'Column has been deleted'
+      },
 
       cards: {
         description:
