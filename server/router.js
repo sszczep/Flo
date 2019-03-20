@@ -36,14 +36,6 @@ router.post('/webhooks/:channel',
   },
   // Process webhook
   async (req, res) => {
-    // Temporary logs
-    console.log('Webhook!');
-    console.log('Event:', req.headers['x-gk-event']);
-    console.log({
-      channel: req.params.channel,
-      json: req.body
-    });
-
     const event = req.headers['x-gk-event'];
     const { action } = req.body;
 
