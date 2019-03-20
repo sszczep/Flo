@@ -3,10 +3,12 @@ module.exports = {
     keywords: {
       name: 'Name',
       description: 'Description',
+      author: 'Author',
       dueDate: 'Due date',
       labels: 'Labels',
       members: 'Members',
       assignees: 'Assignees',
+      content: 'Content',
       old: 'Old',
       new: 'New',
       added: 'Added',
@@ -114,6 +116,18 @@ Changed by: {{ sender.name }} ({{ sender.username }})
         moved_from_board: 'Card has been moved from the other board',
         labels_updated: '$t(webhooks.cards.updated)',
         assignees_updated: '$t(webhooks.cards.updated)'
+      },
+
+      comments: {
+        description:
+`Card name: {{ cardName }}
+Board name: {{ boardName }}
+Changed by: {{ sender.name }} ({{ sender.username }})
+[Open in browser]({{ url }})`,
+
+        added: 'New comment has been added',
+        updated: 'Comment has been updated',
+        deleted: 'Comment has been deleted'
       }
     }
   }
