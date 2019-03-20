@@ -65,13 +65,15 @@ Specify these data in your board settings to start receiving notifications!`
       }
     },
     webhooks: {
+      openInBrowser: 'Open in browser',
       footer: 'GitKraken Glo with ❤︎',
 
       cards: {
         description:
 `Card name: {{ cardName }}
 Board name: {{ boardName }}
-Changed by: {{ sender.name }} ({{ sender.username }})`,
+Changed by: {{ sender.name }} ({{ sender.username }})
+[Open in browser]({{ url }})`,
 
         added: 'New card has been added',
         updated: 'Card has been updated',
