@@ -45,7 +45,9 @@ router.post('/webhooks/:channel',
 
       if(!channel) throw new Error('There is no channel with given id');
 
-      const i18nextInstance = i18next.cloneInstance({ lng: channel.language });
+      const databaseChannel = getDatabaseChannel(req.params.channel);
+
+      const i18nextInstance = i18next.cloneInstance({ lng: databaseChannel.language });
 
       const message = GloEvents[event][action](req.body, i18nextInstance);
       if(message) await channel.send(message);

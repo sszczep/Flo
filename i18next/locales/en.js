@@ -46,7 +46,7 @@ For list of all available commands, type **{{ prefix }} list**`
       language: {
         description: 'list available languages or change the default one',
         message: 'available languages: **{{ languages }}**.',
-        changed: 'successfully changed language to **English**',
+        changed: 'successfully changed language',
         noLanguage:
 `this language is not supported yet.
 
