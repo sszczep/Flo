@@ -34,7 +34,21 @@ For list of all available commands, type **{{ prefix }} list**`
       },
       help: {
         description: 'show general or command specific help page',
-        message: 'general help message...',
+        message:
+`I've been created to provide a nice bridge between Discord and GitKraken Glo.
+I will notify you about recent changes made to your GitKraken Glo's boards.
+
+To get started, you should set up webhooks. For more info type **{{ prefix }} help webhooks**.
+
+To change language type **{{ prefix }} language [code]**, where *code* is your language code.
+
+To get a list of all available languages, type **{{ prefix }} language**.
+
+To get a help of specific command, type **{{ prefix }} help [command]**.
+
+To get a list of all available commands, type **{{ prefix }} list**.
+
+For more details, go to GitHub repository: https://github.com/sszczep/Glocord.`,
         noHelpPage: 'this command does not have help page.'
       },
       list: {
@@ -56,7 +70,10 @@ Available languages: **{{ languages }}**.`
         description: 'show webhooks data',
         help:
 `To be able to receive notifications, you must add webhook to your Glo's board.
-Head to settings panel, select Webhooks and add a new one. Enter your webhook's url and secret and you are ready to go!
+
+**1)** Head to settings panel, select *Webhooks* and add a new one,
+**2)** Enter your webhook's *url* and *secret* and you are ready to go!
+
 You can also select which notifications you want to receive.`,
         message:
 `webhooks credentials:

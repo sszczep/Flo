@@ -34,7 +34,21 @@ Aby uzyskać listę dostępnych komend, wpisz **{{ prefix }} list**`
       },
       help: {
         description: 'pokaż pomoc ogólną lub dotyczącą konrkretnej komendy',
-        message: 'wiadomość help...',
+        message:
+`Zostałem stworzony aby zapewnić dobrą integrację Discorda z GitKraken Glo.
+Będę cię powiadamiał o statnich zmianach w tablicach GitKraken Glo.
+
+Aby rozpocząć, powinieneś najpierw ustawić webhooki. Po więcej informacji wpisz **{{ prefix }} help webhooks**.
+
+Aby zmienić język, wpisz **{{ prefix }} language [code]**, gdzie *code* jest kodem twojego języka.
+
+Aby uzyskać listę dostępnych języków, wpisz **{{ prefix }} language**.
+
+Aby otrzymać pomoc dotyczącą poszczególnej komendy, wpisz **{{ prefix }} help [command]**.
+
+Aby otrzymać listę dostępnych komend, wpisz **{{ prefix }} list**.
+
+Po więcej informacji wejdź na repozytorium GitHub: https://github.com/sszczep/Glocord.`,
         noHelpPage: 'ta komenda nie ma strony z pomocą.'
       },
       list: {
@@ -56,7 +70,10 @@ Dostępne języki: **{{ languages }}**.`
         description: 'pokaż info o webhookach',
         help:
 `Aby otrzymywać powiadomienia, musisz dodać webhooka do swojej tablicy Glo.
-Udaj się do panelu ustawień, wybierz Webhooks i dodaj nowy. Wprowadź url webhooka i secret i wszystko powinno zacząć działać!
+
+**1)** Udaj się do panelu ustawień, wybierz *Webhooks* i dodaj nowy,
+**2)** Wprowadź *url* webhooka i *secret* i wszystko powinno zacząć działać!
+
 Możesz również wybrać jakiego rodzaju powiadomienia chcesz otrzymywać.`,
         message:
 `dane webhooków

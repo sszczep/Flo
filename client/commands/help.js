@@ -1,3 +1,5 @@
+const { prefix } = require('@root/config');
+
 module.exports = {
   args: [
     {
@@ -7,10 +9,10 @@ module.exports = {
   ],
   async handler({ message, i18next, args }, _next) {
     if(args.length === 0) {
-      message.reply(i18next.t('commands.help.message'));
+      message.reply(i18next.t('commands.help.message', { prefix }));
     } else {
       const commandName = args[0];
-      message.reply(i18next.t([`commands.${commandName}.help`, 'commands.help.noHelpPage']));
+      message.reply(i18next.t([`commands.${commandName}.help`, 'commands.help.noHelpPage'], { prefix }));
     }
   }
 };
