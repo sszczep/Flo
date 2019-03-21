@@ -23,7 +23,8 @@ Follow [this](https://github.com/sszczep/Glocord/wiki/Inviting-bot-to-your-own-D
 - **!glo regenerateSecret** - regenerate secret for webhooks
 - **!glo webhooks** - show webhooks data
 
+### Setting up your own server
+Follow [this](https://github.com/sszczep/Glocord/wiki/Hosting-bot-on-your-own-server) guide.
+
 ### Screenshots
-![](https://user-images.githubusercontent.com/21238816/54790784-ad8b2380-4c37-11e9-9506-d35ce7aa6054.png)
-![](https://user-images.githubusercontent.com/21238816/54790822-d57a8700-4c37-11e9-955e-3e99befd92f1.png)
-![](https://user-images.githubusercontent.com/21238816/54790964-4a4dc100-4c38-11e9-894b-68ed62c78d23.png)
+![](https://user-images.githubusercontent.com/21238816/54791357-cf85a580-4c39-11e9-807a-5a8b3f7861ef.png)
