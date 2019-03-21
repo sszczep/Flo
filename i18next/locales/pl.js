@@ -54,7 +54,10 @@ Dostępne języki: **{{ languages }}**.`
       },
       webhooks: {
         description: 'pokaż info o webhookach',
-        help: 'help regarding webhooks...',
+        help:
+`Aby otrzymywać powiadomienia, musisz dodać webhooka do swojej tablicy Glo.
+Udaj się do panelu ustawień, wybierz Webhooks i dodaj nowy. Wprowadź url webhooka i secret i wszystko powinno zacząć działać!
+Możesz również wybrać jakiego rodzaju powiadomienia chcesz otrzymywać.`,
         message:
 `dane webhooków
 URL: **{{ url }}**

@@ -54,7 +54,10 @@ Available languages: **{{ languages }}**.`
       },
       webhooks: {
         description: 'show webhooks data',
-        help: 'help regarding webhooks...',
+        help:
+`To be able to receive notifications, you must add webhook to your Glo's board.
+Head to settings panel, select Webhooks and add a new one. Enter your webhook's url and secret and you are ready to go!
+You can also select which notifications you want to receive.`,
         message:
 `webhooks credentials:
 URL: **{{ url }}**
