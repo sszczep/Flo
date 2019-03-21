@@ -1,0 +1,23 @@
+body, html {
+  height: 100%;
+}
+
+body {
+  color: #323232;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.container {
+  height: 100%;
+}
+
+.buttons {
+  margin-top: 3rem;
+}
+
+.buttons > a {
+  margin-top: 0.4rem;
+}
