@@ -2,6 +2,8 @@
 
 ![version](https://img.shields.io/github/package-json/v/sszczep/Glocord.svg)
 
+[Official page](https://sszczep.github.io/Glocord/)
+
 Get real-time notifications about recent changes made to GitKraken Glo's boards! 
 
 Primarily made for [GitKraken's contest](https://www.gitkraken.com/glo-api-contest).
