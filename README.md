@@ -27,4 +27,4 @@ Follow [this](https://github.com/sszczep/Glocord/wiki/Inviting-bot-to-your-own-D
 Follow [this](https://github.com/sszczep/Glocord/wiki/Hosting-bot-on-your-own-server) guide.
 
 ### Screenshots
-![](https://user-images.githubusercontent.com/21238816/54791357-cf85a580-4c39-11e9-807a-5a8b3f7861ef.png)
+![](https://user-images.githubusercontent.com/21238816/54791406-09ef4280-4c3a-11e9-9abc-e30fa3b407ca.png)
