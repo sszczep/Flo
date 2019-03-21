@@ -38,7 +38,7 @@ Aby uzyskać listę dostępnych komend, wpisz **{{ prefix }} list**`
         noHelpPage: 'ta komenda nie ma strony z pomocą.'
       },
       list: {
-        description: 'Lista dostępnych komend',
+        description: 'lista dostępnych komend',
         message:
 `Lista dostępnych komend:
 {{ listing }}`
@@ -53,7 +53,7 @@ Aby uzyskać listę dostępnych komend, wpisz **{{ prefix }} list**`
 Dostępne języki: **{{ languages }}**.`
       },
       webhooks: {
-        description: 'pokaż info o webhookacah',
+        description: 'pokaż info o webhookach',
         help: 'help regarding webhooks...',
         message:
 `dane webhooków
@@ -105,9 +105,9 @@ Nazwa tablicy: {{ boardName }}
 Zmieniono przez: {{ sender.name }} ({{ sender.username }})
 [Otwórz w przeglądarce]({{ url }})`,
 
-        added: 'Nowa karta zostąła dodana',
-        updated: 'Karta zostąła zaktualizowana',
-        copied: 'Karta zostąła sklonowana',
+        added: 'Nowa karta została dodana',
+        updated: 'Karta została zaktualizowana',
+        copied: 'Karta została sklonowana',
         archived: 'Karta zostąła zarchiwizowana',
         unarchived: 'Karta nie jest już zarchiwizowana',
         deleted: 'Karta została usunięta',
