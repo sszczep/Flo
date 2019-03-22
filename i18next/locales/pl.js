@@ -11,8 +11,11 @@ module.exports = {
       content: 'Treść',
       old: 'Stary',
       new: 'Nowy',
-      added: 'Dodany',
-      removed: 'Usunięty',
+      added: 'Dodano',
+      invited: 'Zaproszono',
+      joined: 'Dołączono',
+      updated: 'Zaktualizowano',
+      removed: 'Usunięto',
       none: 'brak'
     },
     errors: {

@@ -12,6 +12,9 @@ module.exports = {
       old: 'Old',
       new: 'New',
       added: 'Added',
+      invited: 'Invited',
+      joined: 'Joined',
+      updated: 'Updated',
       removed: 'Removed',
       none: 'none'
     },

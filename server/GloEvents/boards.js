@@ -90,9 +90,11 @@ ${i18next.t('keywords.old')}: ${oldBoard.name}`
     labels
   }, i18next) => {
     const added = labels.added.map(label => label.name).join(', ');
-    const removed = labels.removed.map(label => label.name).join(', ');
+    const updated = labels.updated.map(label => label.name).join(', ');
+    const removed = labels.deleted.map(label => label.name).join(', ');
 
     const value = `${i18next.t('keywords.added')}: ${added || `*${i18next.t('keywords.none')}*`}
+${i18next.t('keywords.updated')}: ${updated || `*${i18next.t('keywords.none')}*`}
 ${i18next.t('keywords.removed')}: ${removed || `*${i18next.t('keywords.none')}*`}`;
 
     return {
@@ -120,10 +122,14 @@ ${i18next.t('keywords.removed')}: ${removed || `*${i18next.t('keywords.none')}*`
     sender,
     members
   }, i18next) => {
-    const added = members.added.map(label => label.name).join(', ');
+    const invited = members.invited.map(label => label.name).join(', ');
+    const joined = members.joined.map(label => label.name).join(', ');
+    const updated = members.updated.map(label => label.name).join(', ');
     const removed = members.removed.map(label => label.name).join(', ');
 
-    const value = `${i18next.t('keywords.added')}: ${added || `*${i18next.t('keywords.none')}*`}
+    const value = `${i18next.t('keywords.invited')}: ${invited || `*${i18next.t('keywords.none')}*`}
+${i18next.t('keywords.joined')}: ${joined || `*${i18next.t('keywords.none')}*`}
+${i18next.t('keywords.updated')}: ${updated || `*${i18next.t('keywords.none')}*`}
 ${i18next.t('keywords.removed')}: ${removed || `*${i18next.t('keywords.none')}*`}`;
 
     return {
@@ -138,7 +144,7 @@ ${i18next.t('keywords.removed')}: ${removed || `*${i18next.t('keywords.none')}*`
           text: i18next.t('webhooks.footer')
         },
         fields: [{
-          name: i18next.t('keywords.mambers'),
+          name: i18next.t('keywords.members'),
           value
         }],
         color: colors.updated,
