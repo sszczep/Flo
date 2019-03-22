@@ -1,8 +1,11 @@
-## Glocord
+# Glocord
 
 ![version](https://img.shields.io/github/package-json/v/sszczep/Glocord.svg)
+![last commit](https://img.shields.io/github/last-commit/sszczep/Glocord.svg)
+[![website](https://img.shields.io/badge/website-Glocord-brightgreen.svg)](https://sszczep.github.io/Glocord/)
+[![video](https://img.shields.io/badge/video-Youtube-red.svg)](https://youtu.be/pOJfMypE0as)
 
-[Official page](https://sszczep.github.io/Glocord/)
+[Official page](https://sszczep.github.io/Glocord/) | [Quick overview video](https://youtu.be/pOJfMypE0as)
 
 Get real-time notifications about recent changes made to GitKraken Glo's boards! 
 
@@ -15,7 +18,8 @@ Primarily made for [GitKraken's contest](https://www.gitkraken.com/glo-api-conte
 - multilanguage support (only *en* and *pl* for now)
 
 ### How to use
-Follow [this](https://github.com/sszczep/Glocord/wiki/Inviting-bot-to-your-own-Discord-server) and [this](https://github.com/sszczep/Glocord/wiki/Adding-webhooks-to-GitKraken-Glo's-boards) guide.
+Follow [this](https://github.com/sszczep/Glocord/wiki/Inviting-bot-and-setting-webhooks) guide.
+You can also watch my [video](https://youtu.be/pOJfMypE0as)
 
 ### Available commands
 - **!glo** - short info about bot
