@@ -3,7 +3,8 @@ body, html {
 }
 
 body {
-  color: #323232;
+  background-color: #323232;
+  color: #fff;
 }
 
 .uppercase {
