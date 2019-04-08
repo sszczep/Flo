@@ -55,23 +55,9 @@ Miło było cię poznać :heart:
 <https://github.com/sszczep/Flo|Flo na GitHubie>
 <https://sszczep.github.io/Flo/|Oficjalna strona internetowa>`,
       gettingStarted:
-`Utknąłeś, huh? Nie martw się, nie ty jeden. Dam ci kilka cennych wskazówek.
+`Utknąłeś, huh? Nie martw się.
 
-
-*Zmiana języka*
-Aby zmienić język, idź do zakładki _Ustawienia_ i wybierz swój preferowany język z rozwijanej listy. 
-Nie ma go tam? Wyślij mi prośbę o dodanie albo wyjdź z inicjatywą i przetłumacz sam!
-
-
-*Konfiguracja webhooków*
-Najwyższa pora zacząć otrzymywać powiadomienia.
-Idź do _Ustawień_ i skopiuj Hasło i URL Glo.
-Teraz udaj się do swojej tablicy Glo, następnie do Ustawień i zakładki z Webhookami.
-Dodaj nowy webhook, wklej URL i hasło, wybierz jakie powiadomienia chcesz otrzymywać i powinny zacząć napływać!
-
-
-*Masz inne pytania?*
-Napisz do mnie bądź stwórz nowy problem na GitHubie i z chęcią pomogę.`,
+Poradnik jak zacząć znajdziesz <https://sszczep.github.io/Flo/#getting-started|tutaj>.`,
       settings: {
         header: 'Co chciałbyś zmienić?',
         chooseLanguage: 'Zmień język',

@@ -55,23 +55,9 @@ It was nice getting to know you :heart:
 <https://github.com/sszczep/Flo|Flo on GitHub>
 <https://sszczep.github.io/Flo/|Official website>`,
       gettingStarted:
-`Got stuck, huh? Don't worry, I'll give you some tips.
+`Got stuck, huh? Don't worry.
 
-
-*Changing language*
-To change your language, go to _Settings_ and select your prefered language from dropdown list. 
-Isn't it there? Feel free to send me a request or contribute and do it by yourself!
-
-
-*Configuring webhooks*
-It's the high time to start receiving notifications.
-Go to _Settings_ tab and copy Glo's Secret and URL.
-Now go to your Glo's board, head to Settings and Webhooks.
-Add new webhook, paste URL and Secret, select which notifications you'd like to receive and they should start flowing in!
-
-
-*Got other questions?*
-Message me or create a new issue on GitHub and I will be more than happy to help.`,
+You'll find the Getting Started guide <https://sszczep.github.io/Flo/#getting-started|here>.`,
       settings: {
         header: 'What would you like to change?',
         chooseLanguage: 'Change a language',
