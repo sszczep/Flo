@@ -18,6 +18,10 @@ Primarily made for [GitKraken's contest](https://www.gitkraken.com/glo-api-conte
 - multilanguage support (only *en* and *pl* for now)
 
 ### How to use
-Visit project's [Website](https://sszczep.github.io/Flo/) and add application to your workplace.
-After typing */flo*, interactive menu should appear. There is a *Getting started* button at the bottom of a message.
+Visit project's [website](https://sszczep.github.io/Flo/) and add application to your workplace.
+
+After typing **/flo**, interactive menu should appear. 
+
+There should be a **Getting started** button at the bottom of a message.
+
 It will show you step by step how to configure notifications.
