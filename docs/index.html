@@ -14,23 +14,119 @@
     </head>
 
     <body>
-      <div class="container valign-wrapper center-align">
-        <div class="row">
-          <div class="col s10 m6 offset-s1 offset-m3">
-            <img src="assets/logo.png" class="responsive-img">
-          </div>
-          <div class="col s12">
-            <h5 class="uppercase">Blazing fast Glo notifier for Slack</h5>
-          </div>
-          <div class="col s12 buttons">
-            <a class="waves-effect waves-light" target="_blank" rel="noopener" href="https://slack.com/oauth/authorize?client_id=602493094212.602493244788&scope=bot,commands,chat:write:bot">
-              <img alt="Add to Slack" height="40" width="139" src="https://platform.slack-edge.com/img/add_to_slack.png" srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x">
-            </a>
-          </div>
-          <div class="col s12 buttons">
-              <a class="waves-effect waves-light btn-large red darken-1" target="_blank" rel="noopener" href="https://youtu.be/6n4-kwcx2O8">Watch video</a>
-              <a class="waves-effect waves-light btn-large blue-grey lighten-1" target="_blank" rel="noopener" href="https://github.com/sszczep/Flo">Go to GitHub</a>
+      <div class="dark">
+        <div class="container valign-wrapper center-align">
+          <div class="row">
+            <div class="col s10 m6 offset-s1 offset-m3">
+              <img src="assets/logo.png" class="responsive-img">
             </div>
+            <div class="col s12">
+              <h5 class="uppercase">Blazing fast Glo notifier for Slack</h5>
+            </div>
+            <div class="col s12 buttons">
+                <a class="waves-effect waves-light btn-large purple darken-3" href="https://slack.com/oauth/authorize?client_id=602493094212.602493244788&scope=bot,commands,chat:write:bot">Add to Slack</a>
+                <a class="waves-effect waves-light btn-large red darken-1" href="https://youtu.be/6n4-kwcx2O8">Watch video</a>
+                <a class="waves-effect waves-light btn-large blue-grey blue-grey darken-3" href="https://github.com/sszczep/Flo">Go to GitHub</a>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container valign-wrapper" id="gallery">
+        <div class="row">
+          <div class="col s12">
+            <h3>Gallery</h3>
+          </div>
+          <div class="col s12 m6">
+              <a href="assets/image1.png"><img src="assets/image1.png" class="responsive-img"></a>
+          </div>
+          <div class="col s12 m6">
+              <a href="assets/image2.png"><img src="assets/image2.png" class="responsive-img"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dark">
+        <div class="container valign-wrapper left-align" id="getting-started">
+          <div class="row">
+            <div class="col s12">
+              <h3>Getting started</h5>
+            </div>
+            <div class="col s12">
+              <h5>Adding Flo to Slack workplace</h5>
+              <p>First, you should add <b>Flo</b> to your workplace. To do that, click <a href="">here</a> and authorize app.</p>
+            </div>
+            <div class="col s12 m8">
+              <a href="assets/guide1.png"><img src="assets/guide1.png" class="responsive-img"></a>
+            </div>
+            <div class="col s12">
+              <p>Flo should appear in Apps tab. You may want to add him to different channels.</p>
+            </div>
+            <div class="col s12">
+              <h5>Configuring notifications</h5>
+              <p>
+                To receive Glo notifications, you need to obtain Webhook URL and Secret from Flo's settings.
+                These will vary depending on a channel you are currently in.
+                Be sure to be in the right one!
+              </p>
+              <p>
+                Type <i>/flo</i>, go to <i>Settings</i> and copy these values.
+              </p>
+            </div>
+            <div class="col s12 m8">
+              <a href="assets/guide2.png"><img src="assets/guide2.png" class="responsive-img"></a>
+            </div>
+            <div class="col s12">
+              <p>
+                Now open your board's <i>settings</i>, head to <i>Webhooks</i> and add new. Type appropriate name, both URL and Secret which you saved earlier and select which notifications you'd like to receive.
+                Notifications should start flowing in!
+              </p>
+            </div>
+            <div class="col s12 m8">
+              <a href="assets/guide3.png"><img src="assets/guide3.png" class="responsive-img"></a>
+            </div>
+            <div class="col s12">
+              <h5>Changing language</h5>
+              <p>
+                English doesn't suit you? To change language go to <i>Settings</i> tab like you did in previous step and select one from dropdown menu.
+              </p>
+              <p>
+                <small>Currently supported languages are <i>English</i> and <i>Polish</i>.</small>
+              </p>
+            </div>
+            <div class="col s12">
+              <h5>Got stuck?</h5>
+              <p>
+                Feel free to contact us or create new issue and we'll be more than happy to help!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container valign-wrapper left-align" id="contact-us">
+        <div class="row">
+          <div class="col s12">
+            <h3>Contact us</h5>
+            <p><a href="mailto:s.szczepanski00@gmail.com">Send email</a></p>
+            <p><a href="https://github.com/sszczep/Flo/issues">Open an issue</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="dark">
+        <div class="container valign-wrapper left-align" id="privacy-policy">
+          <div class="row">
+            <div class="col s12">
+              <h3>Privacy policy</h5>
+              <p>We don't store your personal informations</p>
+              <p>
+                We have nothing to store, except your channel preferences (preferred language and secret used tu verify incoming webhooks).
+                We aren't, however, responsible for any data stored by third party apps like <b>Glo</b> and <b>Slack</b>..
+              </p>
+              <p>If you have any inquiries, feel free to contact us</p>
+            </div>
+          </div>
         </div>
       </div>
 

@@ -3,16 +3,28 @@ body, html {
 }
 
 body {
-  background-color: #323232;
-  color: #fff;
+  color: #323232;
 }
 
 .uppercase {
   text-transform: uppercase;
 }
 
+.dark {
+  background-color: #323232;
+  color: #fff;
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
 .container {
-  height: 100%;
+  min-height: 100vh;
+}
+
+.container .row {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .buttons {
