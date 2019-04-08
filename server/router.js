@@ -29,7 +29,7 @@ router.post('/glo/:channel',
     next();
   },
   // Process webhook
-  (req, res) => {
+  async (req, res) => {
     const event = req.headers['x-gk-event'];
     const { action } = req.body;
 
