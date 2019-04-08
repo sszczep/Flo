@@ -13,6 +13,14 @@ const actions = fileLoader('../client/actions')
 async function processAction(req, res) {
   const payload = req.body.payload ? JSON.parse(req.body.payload) : req.body;
 
+  // If we didn't receive channel id, it probably means that we were
+  // configuring URLs in app's settings and Slack is validating them
+  // Just send 200 status code
+  if(!payload.channel_id && (!payload.channel || !payload.channel.id)) {
+    res.sendStatus(200);
+    return;
+  }
+
   // Get database object containing info about channel
   const channel = getChannel(payload.channel_id || payload.channel.id);
 

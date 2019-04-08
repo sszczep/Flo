@@ -11,6 +11,8 @@ const processAction = require('@client/actionsManager');
 const getChannel = require('@root/database/channel');
 const GloEvents = require('@client/GloEvents');
 
+const client = require('@client');
+
 router.post('/slack', processAction);
 
 router.post('/glo/:channel',
@@ -27,13 +29,11 @@ router.post('/glo/:channel',
     next();
   },
   // Process webhook
-  async (req, res) => {
+  (req, res) => {
     const event = req.headers['x-gk-event'];
     const { action } = req.body;
 
     try {
-      const client = await require('@client');
-
       const channel = getChannel(req.params.channel);
 
       const i18nextInstance = i18next.cloneInstance({ lng: channel.language });

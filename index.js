@@ -17,16 +17,13 @@ const signale = new Signale({ scope: 'App' });
   });
 });
 
-// Run app
-module.exports = (async () => {
-  signale.await('Starting app...\n');
+signale.await('Starting app...\n');
 
-  // Configure i18next
-  await require('@i18next');
+// Configure i18next
+require('@i18next');
 
-  // Setup client and server for the first time
-  await require('@client');
-  await require('@server');
+// Setup client and server for the first time
+require('@client');
+require('@server');
 
-  signale.success('App launched successfully!');
-})();
+signale.success('App launched successfully!');

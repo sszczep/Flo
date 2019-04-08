@@ -51,7 +51,7 @@ module.exports = ({ channel, i18next }) => {
           type: 'mrkdwn',
           text:
 `*${i18next.t('messages.settings.GloUrl')}*
-${server.url}:${server.port}/glo/${channel.id}`
+${server.url}/glo/${channel.id}`
         }
       },
       {

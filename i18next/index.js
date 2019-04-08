@@ -4,7 +4,7 @@ const fileLoader = require('@root/helpers/fileLoader');
 
 const signale = new Signale({ scope: 'i18next' });
 
-module.exports = (async () => {
+module.exports = (() => {
   signale.await('Configuring i18next...');
 
   // Load all translations
@@ -12,7 +12,7 @@ module.exports = (async () => {
     .reduce((locales, { filename, content }) => ({ ...locales, [filename]: content }), {});
 
   // Configure global i18next instance
-  await i18next.init({
+  i18next.init({
     lng: 'en',
     fallbackLng: 'en',
     resources,
