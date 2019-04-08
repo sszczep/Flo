@@ -2,6 +2,7 @@ const express = require('express');
 const http = require('http');
 const https = require('https');
 const bodyParser = require('body-parser');
+const path = require('path');
 const { Signale } = require('signale');
 
 const signale = new Signale({ scope: 'Express' });
@@ -17,7 +18,7 @@ module.exports = (() => {
   signale.await('Creating server...');
 
   // Add middlewares
-  server.use(express.static(__dirname + '/static', { dotfiles: 'allow' } ));
+  server.use(express.static(path.join(__dirname, '/static'), { dotfiles: 'allow' }));
   server.use(bodyParser.urlencoded({ extended: false }));
   server.use(bodyParser.json({
     verify: (req, res, buf) => {

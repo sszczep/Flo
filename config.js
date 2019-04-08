@@ -10,10 +10,11 @@ module.exports = {
   name: packageJSON.name,
   version: packageJSON.version,
   server: {
-    url: process.env.SERVER_URL || 'localhost',
+    url: process.env.SERVER_URL || 'localhost'
   },
   slack: {
-    token: process.env.SLACK_TOKEN
+    id: process.env.SLACK_ID,
+    secret: process.env.SLACK_SECRET
   },
   certificates: {
     key: process.env.CERT_KEY && fs.readFileSync(process.env.CERT_KEY),

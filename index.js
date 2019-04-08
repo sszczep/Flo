@@ -19,11 +19,13 @@ const signale = new Signale({ scope: 'App' });
 
 signale.await('Starting app...\n');
 
+// Connect to database
+require('@database');
+
 // Configure i18next
 require('@i18next');
 
-// Setup client and server for the first time
-require('@client');
+// Setup server
 require('@server');
 
 signale.success('App launched successfully!');
