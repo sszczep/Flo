@@ -1,7 +1,7 @@
 {
-  "name": "Glocord",
+  "name": "Flo",
   "version": "1.0.0",
-  "description": "Simple Discord bot notifying about recently made changes in GitKraken Glo boards via webhooks",
+  "description": "Blazing fast Glo notifier for Slack",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,18 +11,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sszczep/DisGlo.git"
+    "url": "git+https://github.com/sszczep/Flo.git"
   },
   "author": "Sebastian Szczepański",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sszczep/DisGlo/issues"
+    "url": "https://github.com/sszczep/Flo/issues"
   },
-  "homepage": "https://github.com/sszczep/DisGlo#readme",
+  "homepage": "https://sszczep.github.io/Flo/",
   "dependencies": {
+    "@slack/web-api": "^5.0.0",
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
-    "diff": "^4.0.1",
-    "discord.js": "^11.4.2",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "i18next": "^15.0.6",
@@ -38,7 +38,9 @@
   "_moduleAliases": {
     "@root": ".",
     "@client": "client",
-    "@server": "server"
+    "@server": "server",
+    "@i18next": "i18next",
+    "@database": "database"
   },
   "signale": {
     "displayFilename": false,

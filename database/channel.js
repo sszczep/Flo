@@ -1,6 +1,6 @@
 const crypto = require('crypto');
 
-const database = require('@root/database/index');
+const database = require('@database/index');
 
 function getChannel(channelID) {
   // Get channel data from database
@@ -16,6 +16,8 @@ function getChannel(channelID) {
   }
 
   return {
+    id: channelID,
+
     get data() {
       return channel.value();
     },

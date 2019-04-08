@@ -7,24 +7,16 @@ const { Signale } = require('signale');
 
 const signale = new Signale({ scope: 'Routes' });
 
-const getDatabaseChannel = require('@root/database/channel');
-const GloEvents = require('@server/GloEvents');
+const processAction = require('@client/actionsManager');
+const getChannel = require('@root/database/channel');
+const GloEvents = require('@client/GloEvents');
 
-router.get('', async (req, res) => {
-  // Get client instance
-  const client = await require('@client/Discord');
+router.post('/slack', processAction);
 
-  res.json({
-    status: client.status,
-    uptime: client.uptime,
-    servers: client.guilds.array().length
-  }).status(200);
-});
-
-router.post('/webhooks/:channel',
+router.post('/glo/:channel',
   // Verify signature
   (req, res, next) => {
-    const channel = getDatabaseChannel(req.params.channel);
+    const channel = getChannel(req.params.channel);
     const hash = crypto.createHmac('sha1', channel.secret).update(req.buf, 'utf-8').digest('hex');
     const signature = `sha1=${hash}`;
 
@@ -40,17 +32,15 @@ router.post('/webhooks/:channel',
     const { action } = req.body;
 
     try {
-      const client = await require('@client/Discord');
-      const channel = client.channels.find(({ id }) => id === req.params.channel);
+      const client = await require('@client');
 
-      if(!channel) throw new Error('There is no channel with given id');
+      const channel = getChannel(req.params.channel);
 
-      const databaseChannel = getDatabaseChannel(req.params.channel);
-
-      const i18nextInstance = i18next.cloneInstance({ lng: databaseChannel.language });
+      const i18nextInstance = i18next.cloneInstance({ lng: channel.language });
 
       const message = GloEvents[event][action](req.body, i18nextInstance);
-      if(message) await channel.send(message);
+
+      if(message) await client.chat.postMessage({ ...message, channel: channel.id });
     } catch(err) {
       signale.error(err);
       return res.sendStatus(400);

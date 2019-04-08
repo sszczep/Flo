@@ -7,8 +7,11 @@ const packageJSON = require('@root/package.json');
 module.exports = {
   name: packageJSON.name,
   version: packageJSON.version,
-  prefix: '!glo',
-  serverUrl: process.env.SERVER_URL || 'localhost',
-  serverPort: process.env.SERVER_PORT || '3000',
-  discordToken: process.env.DISCORD_TOKEN
+  server: {
+    url: process.env.SERVER_URL || 'localhost',
+    port: process.env.SERVER_PORT || '3000'
+  },
+  slack: {
+    token: process.env.SLACK_TOKEN
+  }
 };
