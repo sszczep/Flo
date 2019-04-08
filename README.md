@@ -2,7 +2,7 @@
 
 ![version](https://img.shields.io/github/package-json/v/sszczep/Flo.svg)
 ![last commit](https://img.shields.io/github/last-commit/sszczep/Flo.svg)
-[![website](https://img.shields.io/badge/website-Glocord-brightgreen.svg)](https://sszczep.github.io/Flo/)
+[![website](https://img.shields.io/badge/website-Flo-brightgreen.svg)](https://sszczep.github.io/Flo/)
 [![video](https://img.shields.io/badge/video-Youtube-red.svg)](https://youtu.be/6n4-kwcx2O8)
 
 [Official page](https://sszczep.github.io/Flo/) | [Promo video](https://youtu.be/6n4-kwcx2O8)
