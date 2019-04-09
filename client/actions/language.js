@@ -1,6 +1,8 @@
 const settings = require('./settings');
 
-module.exports = ({ payload, channel, i18next }) => {
+module.exports = ({
+  payload, team, channel, i18next
+}) => {
   // Get selected language and set it in database and i18next local instance
   const selectedLanguage = payload.actions[0].selected_option.value;
 
@@ -8,5 +10,5 @@ module.exports = ({ payload, channel, i18next }) => {
   i18next.changeLanguage(selectedLanguage);
 
   // Return updated settings page
-  return settings({ channel, i18next });
+  return settings({ team, channel, i18next });
 };

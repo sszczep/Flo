@@ -7,5 +7,5 @@ module.exports = ({ team, channel, i18next }) => {
 
   channel.secret = secret;
 
-  return settings({ channel, i18next });
+  return settings({ team, channel, i18next });
 };

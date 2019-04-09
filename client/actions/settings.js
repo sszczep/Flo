@@ -1,6 +1,6 @@
 const { server } = require('@root/config');
 
-module.exports = ({ channel, i18next }) => {
+module.exports = ({ team, channel, i18next }) => {
   // Get all available languages and map them to array
   const availableLanguages = Object.keys(i18next.options.resources);
   const languagesOptions = availableLanguages.map(lng => (
@@ -51,7 +51,7 @@ module.exports = ({ channel, i18next }) => {
           type: 'mrkdwn',
           text:
 `*${i18next.t('messages.settings.GloUrl')}*
-${server.url}/glo/${channel.id}`
+${server.url}/glo/${team.id}/${channel.id}`
         }
       },
       {
