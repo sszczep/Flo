@@ -44,7 +44,7 @@ router.get('/slack/auth', async (req, res) => {
     });
 
     // Assign token to team in database
-    database.team(data.teamID).token = data.bot.bot_access_token;
+    database.team(data.team_id).token = data.bot.bot_access_token;
 
     res.redirect(`https://sszczep.github.io/Flo/?auth=success&workplace=${data.team_name}`);
   } catch(error) {
