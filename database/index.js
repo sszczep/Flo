@@ -29,6 +29,10 @@ module.exports = {
 
     return {
       // Return getters and setters regarding teams
+      get id() {
+        return team.value().id;
+      },
+
       get token() {
         return team.value().token;
       },
@@ -43,7 +47,7 @@ module.exports = {
         const channel = database.get('channels').find({ teamID, id: channelID });
 
         // If channel does not exist, create it
-        if(!channel) {
+        if(!channel.value()) {
           database.get('channels').push({
             teamID,
             id: channelID,
@@ -54,6 +58,14 @@ module.exports = {
 
         // Return getters and setters regarding channels
         return {
+          get id() {
+            return channel.value().id;
+          },
+
+          get teamID() {
+            return channel.value().teamID;
+          },
+
           get secret() {
             return channel.value().secret;
           },
