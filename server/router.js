@@ -16,9 +16,35 @@ const { processCommand, processInteractiveMessage } = require('@client/actionsMa
 const database = require('@root/database');
 const GloEvents = require('@client/GloEvents');
 
-router.post('/slack/command', processCommand);
+const slackVerification = (req, res, next) => {
+  const slackSignature = req.headers['x-slack-signature'];
+  const requestBody = qs.stringify(req.body, { format: 'RFC1738' });
+  const timestamp = req.headers['x-slack-request-timestamp'];
 
-router.post('/slack/interactiveMessage', processInteractiveMessage);
+  // Check for reply attacks
+  if(Math.abs((Date.now() / 1000) - timestamp) > 300) {
+    res.sendStatus(400);
+    return;
+  }
+
+  // Calculate expected signature
+  const signature = `v0=${
+    crypto.createHmac('sha256', config.slack.signingSecret)
+      .update(`v0:${timestamp}:${requestBody}`, 'utf8')
+      .digest('hex')
+  }`;
+
+  // Compare signatures
+  if(crypto.timingSafeEqual(
+    Buffer.from(signature, 'utf8'),
+    Buffer.from(slackSignature, 'utf8')
+  )) next();
+  else res.sendStatus(400);
+};
+
+router.post('/slack/command', slackVerification, processCommand);
+
+router.post('/slack/interactiveMessage', slackVerification, processInteractiveMessage);
 
 router.get('/slack/auth', async (req, res) => {
   try {
@@ -31,7 +57,7 @@ router.get('/slack/auth', async (req, res) => {
     // Build our auth object
     const authInfo = qs.stringify({
       client_id: config.slack.id,
-      client_secret: config.slack.secret,
+      client_secret: config.slack.clientSecret,
       code: req.query.code
     });
 
@@ -52,19 +78,19 @@ router.get('/slack/auth', async (req, res) => {
   }
 });
 
-router.post('/glo/:team/:channel',
-  // Verify signature
-  (req, res, next) => {
-    const { secret } = database.team(req.params.team).channel(req.params.channel);
-    const hash = crypto.createHmac('sha1', secret).update(req.buf, 'utf-8').digest('hex');
-    const signature = `sha1=${hash}`;
+const gloVerification = (req, res, next) => {
+  const { secret } = database.team(req.params.team).channel(req.params.channel);
+  const hash = crypto.createHmac('sha1', secret).update(req.buf, 'utf-8').digest('hex');
+  const signature = `sha1=${hash}`;
 
-    if(signature !== req.headers['x-gk-signature']) {
-      return res.status(403).send('invalid signature');
-    }
+  if(signature !== req.headers['x-gk-signature']) {
+    return res.status(403).send('invalid signature');
+  }
 
-    next();
-  },
+  next();
+};
+
+router.post('/glo/:team/:channel', gloVerification,
   // Process webhook
   async (req, res) => {
     const event = req.headers['x-gk-event'];

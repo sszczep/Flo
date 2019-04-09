@@ -14,7 +14,8 @@ module.exports = {
   },
   slack: {
     id: process.env.SLACK_ID,
-    secret: process.env.SLACK_SECRET
+    clientSecret: process.env.SLACK_CLIENT_SECRET,
+    signingSecret: process.env.SLACK_SIGNING_SECRET
   },
   certificates: {
     key: process.env.CERT_KEY && fs.readFileSync(process.env.CERT_KEY),

@@ -17,6 +17,12 @@ function processCommand(req, res) {
     return;
   }
 
+  // If these values are missing, respond with 400 status code
+  if(!req.body.team_id || !req.body.team_id) {
+    res.sendStatus(400);
+    return;
+  }
+
   const { team_id, channel_id } = req.body;
 
   // Get preferred channel's language
@@ -36,7 +42,18 @@ async function processInteractiveMessage(req, res) {
     return;
   }
 
-  const payload = JSON.parse(req.body.payload);
+  let payload;
+
+  // Check if we got proper payload
+  try {
+    payload = JSON.parse(req.body.payload);
+
+    // If these values are missing, throw error
+    if(!payload.actions || !payload.team || !payload.channel) throw new Error();
+  } catch(err) {
+    res.sendStatus(400);
+    return;
+  }
 
   // Extract action name
   // We are assuming that there was only one action
