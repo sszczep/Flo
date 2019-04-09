@@ -11,15 +11,13 @@ const actions = fileLoader('../client/actions')
   }), {});
 
 function processCommand(req, res) {
-  const { team_id, channel_id } = req.body;
-
-  // If we didn't receive team_id nor channel_id, it probably means that we were
-  // configuring URLs in app's settings and Slack is validating them
-  // Just send 200 status code
-  if(!team_id || !channel_id) {
+  // Send 200 status code when Slack is checking if URL is valid
+  if(req.body.ssl_check) {
     res.sendStatus(200);
     return;
   }
+
+  const { team_id, channel_id } = req.body;
 
   // Get preferred channel's language
   const { language } = database.team(team_id).channel(channel_id);
@@ -32,15 +30,13 @@ function processCommand(req, res) {
 }
 
 async function processInteractiveMessage(req, res) {
-  const payload = JSON.parse(req.body.payload);
-
-  // If we didn't receive channel object, it probably means that we were
-  // configuring URLs in app's settings and Slack is validating them
-  // Just send 200 status code
-  if(!payload.channel) {
+  // Send 200 status code when Slack is checking if URL is valid
+  if(req.body.ssl_check) {
     res.sendStatus(200);
     return;
   }
+
+  const payload = JSON.parse(req.body.payload);
 
   // Extract action name
   // We are assuming that there was only one action
