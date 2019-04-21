@@ -25,9 +25,9 @@ module.exports = ({ i18next }) => ({
           type: 'button',
           text: {
             type: 'plain_text',
-            text: i18next.t('buttons.home')
+            text: i18next.t('buttons.help')
           },
-          action_id: 'gettingStarted'
+          action_id: 'help'
         },
         {
           type: 'button',
