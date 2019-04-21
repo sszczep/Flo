@@ -23,16 +23,33 @@ function processCommand(req, res) {
     return;
   }
 
-  const { team_id, channel_id } = req.body;
+  const { team_id, channel_id } = req.body; // eslint-disable-line camelcase
+
+  // Get team and channel from database
+  const team = database.team(team_id);
+  const channel = team.channel(channel_id);
 
   // Get preferred channel's language
-  const { language } = database.team(team_id).channel(channel_id);
+  const { language } = channel;
 
   // Clone i18next instance so we can set local language
   const i18nextInstance = i18next.cloneInstance({ lng: language });
 
-  // Return home page
-  res.status(200).json(actions.home({ i18next: i18nextInstance }));
+  let action;
+
+  // Return appropriate page
+  switch(req.body.text) {
+  case 'help':
+    action = actions.help;
+    break;
+  case 'settings':
+    action = actions.settings;
+    break;
+  default:
+    action = actions.home;
+  }
+
+  res.status(200).json(action({ i18next: i18nextInstance, team, channel }));
 }
 
 async function processInteractiveMessage(req, res) {

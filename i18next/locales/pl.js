@@ -11,7 +11,7 @@ module.exports = {
 
     buttons: {
       aboutMe: ':question: O mnie',
-      gettingStarted: ':green_book: Jak zacząć?',
+      help: ':green_book: Pomoc',
       settings: ':gear: Ustawienia',
       close: ':heavy_multiplication_x: Zamknij',
       goBack: 'Powrót',
@@ -33,7 +33,7 @@ module.exports = {
       home:
 `Hej, jestem *Flo*.
 Jak mogę ci pomóc?`,
-      aboutMe: 
+      aboutMe:
 `Jak pewnie wiesz, mam na imię *Flo*, ale lubię się z dumą przedstawiać jako *Błyskawicznie szybki powiadamiacz Glo dla Slacka*.
 
 
@@ -54,7 +54,7 @@ Miło było cię poznać :heart:
 
 <https://github.com/sszczep/Flo|Flo na GitHubie>
 <https://sszczep.github.io/Flo/|Oficjalna strona internetowa>`,
-      gettingStarted:
+      help:
 `Utknąłeś, huh? Nie martw się.
 
 Poradnik jak zacząć znajdziesz <https://sszczep.github.io/Flo/#getting-started|tutaj>.`,

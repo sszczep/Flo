@@ -1,4 +1,5 @@
-window.onload = function () {
+/* eslint-disable no-undef */
+window.onload = function handleAuthResponse() {
   const urlParams = new URLSearchParams(window.location.search);
 
   const auth = urlParams.get('auth');

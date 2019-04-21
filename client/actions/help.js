@@ -4,7 +4,7 @@ module.exports = ({ i18next }) => ({
       type: 'section',
       text: {
         type: 'mrkdwn',
-        text: i18next.t('messages.home')
+        text: i18next.t('messages.help')
       }
     },
     {
@@ -17,25 +17,9 @@ module.exports = ({ i18next }) => ({
           type: 'button',
           text: {
             type: 'plain_text',
-            text: i18next.t('buttons.aboutMe')
+            text: i18next.t('buttons.goBack')
           },
-          action_id: 'aboutMe'
-        },
-        {
-          type: 'button',
-          text: {
-            type: 'plain_text',
-            text: i18next.t('buttons.home')
-          },
-          action_id: 'gettingStarted'
-        },
-        {
-          type: 'button',
-          text: {
-            type: 'plain_text',
-            text: i18next.t('buttons.settings')
-          },
-          action_id: 'settings'
+          action_id: 'home'
         },
         {
           type: 'button',

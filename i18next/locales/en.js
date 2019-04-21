@@ -11,7 +11,7 @@ module.exports = {
 
     buttons: {
       aboutMe: ':question: About me',
-      gettingStarted: ':green_book: Getting started',
+      help: ':green_book: Help',
       settings: ':gear: Settings',
       close: ':heavy_multiplication_x: Close',
       goBack: 'Go back',
@@ -33,7 +33,7 @@ module.exports = {
       home:
 `Hi, I'm *Flo*.
 How can I help you?`,
-      aboutMe: 
+      aboutMe:
 `As you probably know, my name is *Flo*, or as I like to proudly call myself - a *Blazing fast Glo notifier for Slack*.
 
 
@@ -54,7 +54,7 @@ It was nice getting to know you :heart:
 
 <https://github.com/sszczep/Flo|Flo on GitHub>
 <https://sszczep.github.io/Flo/|Official website>`,
-      gettingStarted:
+      help:
 `Got stuck, huh? Don't worry.
 
 You'll find the Getting Started guide <https://sszczep.github.io/Flo/#getting-started|here>.`,
