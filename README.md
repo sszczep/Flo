@@ -5,7 +5,7 @@
 [![website](https://img.shields.io/badge/website-Flo-brightgreen.svg)](https://sszczep.github.io/Flo/)
 [![video](https://img.shields.io/badge/video-Youtube-red.svg)](https://youtu.be/6n4-kwcx2O8)
 
-[Official page](https://sszczep.github.io/Flo/) | [Promo video](https://youtu.be/6n4-kwcx2O8)
+[Official page](https://floapp.tk/) | [Promo video](https://youtu.be/6n4-kwcx2O8)
 
 Get real-time notifications about recent changes made to GitKraken Glo's boards! 
 
