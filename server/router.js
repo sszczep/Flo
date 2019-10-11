@@ -16,6 +16,10 @@ const { processCommand, processInteractiveMessage } = require('@client/actionsMa
 const database = require('@root/database');
 const GloEvents = require('@client/GloEvents');
 
+router.get('/', (req, res, next) => {
+	res.redirect('https://sszczep.github.io/Flo');
+});
+
 const slackVerification = (req, res, next) => {
   const slackSignature = req.headers['x-slack-signature'];
   const requestBody = qs.stringify(req.body, { format: 'RFC1738' });
