@@ -20,21 +20,21 @@
   },
   "homepage": "https://sszczep.github.io/Flo/",
   "dependencies": {
-    "@slack/web-api": "^5.0.0",
-    "axios": "^0.18.0",
-    "body-parser": "^1.18.3",
-    "dotenv": "^6.2.0",
-    "express": "^4.16.4",
-    "i18next": "^15.0.6",
+    "@slack/web-api": "^5.2.1",
+    "axios": "^0.19.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "i18next": "^17.2.0",
     "lowdb": "^1.0.0",
-    "module-alias": "^2.2.0",
-    "qs": "^6.7.0",
+    "module-alias": "^2.2.2",
+    "qs": "^6.9.0",
     "signale": "^1.4.0"
   },
   "devDependencies": {
-    "eslint": "^5.15.1",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0"
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
   },
   "_moduleAliases": {
     "@root": ".",
