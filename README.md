@@ -1,5 +1,6 @@
 ```diff
-@@ This project is not maintained anymore. Feel free to contact me directly in case of any questions. @@
+@@   This project is not maintained anymore.                      @@
+@@   Feel free to contact me directly in case of any questions.   @@
 ```
 
 # Flo
